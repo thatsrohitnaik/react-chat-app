@@ -6,27 +6,27 @@ import "./style.css";
 const useStyles = makeStyles(theme => ({
   root: {
     margin: "2px",
-    backgroundColor: "cornflowerblue",
     width: "50%",
+    backgroundColor: "aquamarine",
     padding: "5px"
   }
 }));
 
 export default function Message(props) {
   const classes = useStyles();
-
-  const { senderId, receiverId, message } = props.data;
+  const { senderId, message } = props.data;
   const userId = props.userId;
-
-  console.log(senderId, receiverId, message);
-  console.log(userId);
+  const value = senderId === userId;
 
   return (
     <Alert
       className={classes.root}
-      style={{ marginLeft: senderId == userId ? "auto" : null }}
+      style={
+        ({ backgroundColor: value ? "aquamarine" : "green" },
+        { marginLeft: senderId == userId ? "auto" : null })
+      }
       variant="filled"
-      severity="none"
+      severity=""
     >
       {message}
     </Alert>
