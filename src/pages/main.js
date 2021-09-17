@@ -1,10 +1,10 @@
-import React from "react";
-import Grid from "@material-ui/core/Grid";
-import History from "../components/history/";
-import Panel from "../components/panel/";
+import React from 'react';
+import Grid from '@material-ui/core/Grid';
+import History from '../components/history/';
+import Panel from '../components/panel/';
 
 export default function Main(props) {
-  console.log(props);
+  console.log(props, 'hjgg');
 
   return (
     <Grid container spacing={3}>
